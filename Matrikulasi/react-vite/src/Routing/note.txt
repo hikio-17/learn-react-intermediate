@@ -1,0 +1,17 @@
+React Router Components ====
+
+1. BrowserRouter
+=> Komponen ini berperan sebagai pembungkus (wrapper) untuk seluruh cakupan aplikasi yang memanfaatkan routing. Komponen inilah yang mengatur dan mengawasi perubvahan URL guna memastikan komponen atau halaman tampil sesuai dengan perubahannya
+
+2. Link
+=> Komponen ini digunakan oleh pengguna untuk menavigase halaman selama berada di aplikasi. Secara prinsip, komponen ini mirip dengan komponen <Link /> yang telah dibuat sebelumnya, dan lebih canggih karena terintegrasi dengan URL dan History API
+
+3. Routes dan Route
+=> komponen ini akan menggantikan peran dari penggunaan if atau short-circuit evaluation yang dilakukan pada latihan pembuatan <Link />. Karena komponen ini terintegrasi dengan URL, sehingga kita dapat lebih mudah dalam membuat dan memanfaatkan parameter yang disisipkan dalam bentuk path (/users/:id) atau query(/users?id).
+.
+
+example 
+<Routes>
+   <Route path='/users/:id' element={<Dashboard />} />
+   <Route path='/about' element={<About />} />
+</Routes>
