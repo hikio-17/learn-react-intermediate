@@ -1,0 +1,2 @@
+1. Belajar validasi property dengan tools PropTypes
+2. 
