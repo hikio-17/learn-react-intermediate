@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <title>Event Tester</title>
+        <style type="text/css">    
+            #editor {
+                float: left; border: 3px solid gray;
+                padding: 15px; height: 400px;
+                width: 400px; background-color: black;                             
+                color: #eeee00; white-space: pre-wrap;
+            }
+            #outputHTML {               
+                width: auto; margin-left: 450px;
+                border: 3px solid gray; background-color: #eeeeee;
+                height: 400px; padding: 15px; font: 15px monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='editor' contenteditable="true">Silahkan menulis disini!</div>
+        <div id='outputHTML'>Silahkan menulis disini!</div>
+        <script type="text/javascript">
+            var editor = document.getElementById('editor');
+            var outputHTML = document.getElementById('outputHTML');
+            editor.addEventListener('input', function(e) {                
+                outputHTML.textContent = editor.innerHTML;                          
+            }, false);
+        </script>
+    </body>
+</html>

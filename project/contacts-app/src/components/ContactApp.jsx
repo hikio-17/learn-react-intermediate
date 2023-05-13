@@ -1,5 +1,4 @@
 import React from 'react';
-import { getContacts } from '../utils/data';
 import Navigation from './Navigation';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
