@@ -1,17 +1,18 @@
 import React from 'react'
-import { getActiveNotes } from '../utils/local-data'
+import { getArchivedNotes } from '../utils/local-data'
 import CardList from '../components/CardList'
 
-class Home extends React.Component {
+class ArchivesNote extends React.Component {
   constructor (props) {
     super(props)
-
     this.state = {
-      notes: getActiveNotes(),
+      notes: getArchivedNotes(),
       keyword: ''
     }
+
     this.onKeywordChange = this.onKeywordChange.bind(this)
   }
+
   onKeywordChange (keyword) {
     this.setState(() => {
       return {
@@ -27,7 +28,7 @@ class Home extends React.Component {
     return (
       <section className='main-content'>
         <div className='header-content'>
-          <h3>Catatan Aktif</h3>
+          <h3>Catatan Arsip</h3>
           <input
             type='text'
             placeholder='Search by title ...'
@@ -43,4 +44,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default ArchivesNote

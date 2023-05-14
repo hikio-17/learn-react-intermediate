@@ -1,27 +1,36 @@
 import React from 'react'
 import '../styles/addNote.css'
-import { addNote } from '../utils/local-data'
-import { useNavigate } from 'react-router-dom'
+import { editNote, getNote } from '../utils/local-data'
+import { useNavigate, useParams } from 'react-router-dom'
+import parser from 'html-react-parser'
 import PropTypes from 'prop-types'
 
-function AddNoteWrapper () {
+function EditNoteWrapper () {
   const navigate = useNavigate()
+  const { id } = useParams()
+
+  const note = getNote(id)
 
   function onSubmitHandler (note) {
-    addNote(note)
-    navigate('/')
+    const updateNote = {
+      ...note,
+      id
+    }
+    console.log(updateNote)
+    editNote(updateNote)
+    navigate(`/notes/${id}`)
   }
 
-  return <AddNote onSubmitHandler={onSubmitHandler} />
+  return <EditNote note={note} onSubmitHandler={onSubmitHandler} />
 }
 
-class AddNote extends React.Component {
+class EditNote extends React.Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      title: '',
-      body: ''
+      title: this.props.note.title,
+      body: this.props.note.body
     }
 
     this.onInputHandler = this.onInputHandler.bind(this)
@@ -62,7 +71,7 @@ class AddNote extends React.Component {
               contentEditable='true'
               onInput={this.onInputHandler}
             >
-              Edit me
+              {parser(this.state.body)}
             </div>
             <button
               id='btn-save'
@@ -77,8 +86,9 @@ class AddNote extends React.Component {
   }
 }
 
-AddNote.propTypes = {
+EditNote.propTypes = {
+  note: PropTypes.object.isRequired,
   onSubmitHandler: PropTypes.func.isRequired
 }
 
-export default AddNoteWrapper
+export default EditNoteWrapper
