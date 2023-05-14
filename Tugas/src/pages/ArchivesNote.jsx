@@ -37,7 +37,19 @@ class ArchivesNote extends React.Component {
           />
         </div>
         <div className='notes'>
-          <CardList notes={notes} />
+          {notes.length ? (
+            <CardList notes={notes} />
+          ) : (
+            <h1
+              style={{
+                textAlign: 'center',
+                color: 'white',
+                marginTop: '100px'
+              }}
+            >
+              Arsip Kosong
+            </h1>
+          )}
         </div>
       </section>
     )

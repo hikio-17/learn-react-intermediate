@@ -6,7 +6,7 @@ function CardList ({ notes }) {
   return (
     <section className='list-cards'>
       {notes.map((note, i) => (
-        <Card note={note} />
+        <Card key={i} note={note} />
       ))}
     </section>
   )

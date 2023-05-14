@@ -6,6 +6,7 @@ import ArchivesNote from './pages/ArchivesNote'
 import React from 'react'
 import AddNoteWrapper from './pages/AddNote'
 import EditNoteWrapper from './pages/EditNote'
+import NotFound from './pages/NotFound'
 
 function App () {
   return (
@@ -21,6 +22,7 @@ function App () {
           <Route path='/notes/:id' element={<DetailNote />} />
           <Route path='/archives' element={<ArchivesNote />} />
           <Route path='/notes/edit/:id' element={<EditNoteWrapper />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
     </>

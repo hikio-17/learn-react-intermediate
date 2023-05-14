@@ -58,7 +58,6 @@ class AddNote extends React.Component {
           <div className='body'>
             <div
               className='input-body'
-              data-placeholder='Sebenarnya saya adalah ...'
               contentEditable='true'
               onInput={this.onInputHandler}
             >

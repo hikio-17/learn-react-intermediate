@@ -36,7 +36,19 @@ class Home extends React.Component {
           />
         </div>
         <div className='notes'>
-          <CardList notes={notes} />
+          {notes.length ? (
+            <CardList notes={notes} />
+          ) : (
+            <h1
+              style={{
+                textAlign: 'center',
+                color: 'white',
+                marginTop: '100px'
+              }}
+            >
+              Tidak Ada Catatan
+            </h1>
+          )}
         </div>
       </section>
     )

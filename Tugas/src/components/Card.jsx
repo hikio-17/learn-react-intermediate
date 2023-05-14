@@ -8,16 +8,16 @@ import parser from 'html-react-parser'
 function Card ({ note }) {
   const { id, title, body, createdAt } = note
   return (
-    <div class='card'>
-      <div class='upper-part'>
-        <div class='upper-part-face'>{title}</div>
-        <div class='upper-part-back'>{parser(body.slice(0, 90) + '...')}</div>
+    <div className='card'>
+      <div className='upper-part'>
+        <div className='upper-part-face'>{title}</div>
+        <div className='upper-part-back'>{parser(body.slice(0, 90) + '...')}</div>
       </div>
-      <div class='lower-part'>
-        <div class='lower-part-face'>
+      <div className='lower-part'>
+        <div className='lower-part-face'>
           {dateFormatter.format(new Date(createdAt))}
         </div>
-        <div class='lower-part-back'>
+        <div className='lower-part-back'>
           <Link to={`/notes/${id}`}>Read more</Link>
         </div>
       </div>
