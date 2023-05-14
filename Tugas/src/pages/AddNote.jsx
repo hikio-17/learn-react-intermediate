@@ -60,6 +60,7 @@ class AddNote extends React.Component {
               className='input-body'
               contentEditable='true'
               onInput={this.onInputHandler}
+              suppressContentEditableWarning={true}
             >
               Edit me
             </div>

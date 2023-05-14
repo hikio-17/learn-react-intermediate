@@ -27,7 +27,7 @@ function Button ({
 
 Button.propTypes = {
   id: PropTypes.string.isRequired,
-  archived: PropTypes.string.isRequired,
+  archived: PropTypes.bool.isRequired,
   handleArchiveNote: PropTypes.func.isRequired,
   handleDeleteNote: PropTypes.func.isRequired,
   handleUnarchiveNote: PropTypes.func.isRequired

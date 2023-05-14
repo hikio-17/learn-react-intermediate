@@ -16,7 +16,6 @@ function EditNoteWrapper () {
       ...note,
       id
     }
-    console.log(updateNote)
     editNote(updateNote)
     navigate(`/notes/${id}`)
   }
@@ -69,6 +68,7 @@ class EditNote extends React.Component {
               className='input-body'
               data-placeholder='Sebenarnya saya adalah ...'
               contentEditable='true'
+              suppressContentEditableWarning={true}
               onInput={this.onInputHandler}
             >
               {parser(this.state.body)}
